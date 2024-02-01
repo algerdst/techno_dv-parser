@@ -14,15 +14,8 @@ from email.mime.base import MIMEBase
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 from datetime import datetime
-import sys
 
-expires = 96
-last_day = datetime.strptime('2024-01-08T14:35:18.000Z', '%Y-%m-%dT%H:%M:%S.000Z')
-now = datetime.now()
-delta = now - last_day
-delta = abs(delta.days)
-if delta > expires:
-    sys.exit()
+
 
 # Создание экземпляра скрапера
 scraper = cloudscraper.create_scraper()
